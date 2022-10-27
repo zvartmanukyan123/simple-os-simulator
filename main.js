@@ -40,10 +40,10 @@ class SimpleOS {
     this.openedFiles.set(fd, value);
   }
 
-  seek(fd, position) {
+ seek(fd, position) {
     const currentFile = (this.openedFiles.get(fd));
     const value = {...currentFile, cursor: position}
-    this.openedFiles.set(value);
+    this.openedFiles.set(fd, value);
   }
   
   close(fd) {
